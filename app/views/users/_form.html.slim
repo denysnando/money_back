@@ -1,0 +1,17 @@
+= simple_form_for @resource do |f|
+  = f.input :user_type, as: :hidden, input_html: { value: session[:user_type] }
+
+  .row
+    .col-md-4
+      = f.input :email
+      = f.input :name
+
+  hr.line
+  .row
+    .col-md-4
+      = f.input :password
+  .row
+    .col-md-4
+      = f.input :password_confirmation
+
+  = render 'form_buttons', f: f
