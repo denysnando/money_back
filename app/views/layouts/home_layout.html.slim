@@ -4,15 +4,33 @@ html
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title
       = content_for?(:title) ? yield(:title) : 'money_back'
-
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'money_back'}"
-    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"
-    meta content="" name="author"
 
-
-    == javascript_include_tag 'home/application', :media => 'all'
-    == stylesheet_link_tag "home/application", :media => 'all'
-
+    == stylesheet_link_tag "admin/application"
+    == javascript_include_tag 'admin/application'
     == csrf_meta_tags
 
-    = yield
+    link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"
+
+
+  body
+    #page-loader.fade.in
+      span.spinner
+    #page-container.fade.page-sidebar-fixed.page-header-fixed
+      #header.header.navbar.navbar-default.navbar-fixed-top.noprint
+        .container-fluid
+          .navbar-header
+            a.navbar-brand href="/"
+              span.navbar-logo
+              | money_back
+            button.navbar-toggle data-click="sidebar-toggled" type="button"
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+          ul.nav.navbar-nav.navbar-right
+            li = yield(:top_search)
+
+      #content.container
+        == render 'layouts/messages'
+        h1.onlyprint money_back
+        = yield

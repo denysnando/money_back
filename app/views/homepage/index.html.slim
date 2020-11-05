@@ -1,0 +1,13 @@
+.row.padding-header
+  - @offers.each do |offer|
+    .col-md-3.col-sm-6.justify-content-center.position-relative
+      .widget.widget-stats.bg-green
+        .stats-info
+          h4 = offer.advertiser_name
+        .stats-link
+          a.justify-content-center target="_blank" href= offer.url
+            | SHOP NOW
+            i.fa.fa-money.margin-left
+      - if offer.premium?
+        .foo.position-absolute.premium-placeholder
+          | premium

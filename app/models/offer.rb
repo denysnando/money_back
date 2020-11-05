@@ -8,6 +8,9 @@ class Offer < ApplicationRecord
   validates :starts_at, presence: true, date: true
   validates :ends_at, date: { allow_blank: true, after_or_equal_to: :starts_at}
 
+  # Scopes
+  scope :enabled, -> { where(enabled: true) }
+
   def cannot_update_status?
     ends_at.nil? || Time.zone.today > ends_at
   end

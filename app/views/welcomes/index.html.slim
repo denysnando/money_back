@@ -8,9 +8,21 @@ h1.page-header
         .stats-icon
           i.fa.fa-male
         .stats-info
-          h4 TOTAL DE CLIENTES
+          h4 Clients
           p = User.where(user_type: UserType::CLIENT).count
         .stats-link
           a href="#{url_for(users_path(user_type: :client))}"
-            | Detalhes
+            | Show
             i.fa.fa-arrow-circle-o-right
+    .col-md-3.col-sm-6
+      .widget.widget-stats.bg-green
+        .stats-icon
+          i.fa.fa-money
+        .stats-info
+          h4 OFFERS
+          p = Offer.count
+        .stats-link
+          a href="#{url_for(offers_path)}"
+            | Show
+            i.fa.fa-arrow-circle-o-right
+

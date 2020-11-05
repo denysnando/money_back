@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   get :admin, to: 'welcomes#index', path: 'admin'
+  get :homepage, to: 'homepage#index', path: '/'
 
   devise_for :users, controllers: { registrations: 'users' }
   resources :users
