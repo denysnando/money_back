@@ -1,4 +1,4 @@
-= simple_form_for @resource do |f|
+= simple_form_for @collection do |f|
   = f.input :user_type, as: :hidden, input_html: { value: session[:user_type] }
 
   .row

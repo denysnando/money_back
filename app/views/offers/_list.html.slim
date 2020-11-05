@@ -1,0 +1,55 @@
+table.table
+  thead
+    tr
+      th.center = Offer.human_attribute_name :id
+      th.center = Offer.human_attribute_name :advertiser_name
+      th.center = Offer.human_attribute_name :url
+      th.center = Offer.human_attribute_name :starts_at
+      th.center = Offer.human_attribute_name :ends_at
+      th.center = Offer.human_attribute_name :enabled
+      th.center = Offer.human_attribute_name :premium
+      th.noprint
+      th.noprint
+      th.noprint
+  tbody
+    - collections.each do |offer|
+      tr
+        td = offer.id
+        td = offer.advertiser_name
+        td = offer.url
+        td = offer.starts_at
+        td = offer.ends_at
+        td = offer.enabled
+        td = offer.premium
+
+        td.text-center.noprint
+          = link_to edit_offer_path(offer),
+            class: 'btn btn-success hint',
+            title: 'Edit' do
+              i.fa.fa-pencil.no-margin
+
+        - if offer.enabled
+          td.text-center.noprint
+            = link_to change_status_offers_path(id: offer),
+              method: :put,
+              class: 'btn btn-success hint',
+              title: 'Disable' do
+                i.fa.fa-lock.no-margin
+
+        - else
+          td.text-center.noprint
+            = link_to change_status_offers_path(id: offer),
+                method: :put,
+                class: 'btn btn-success hint',
+                title: 'Enable' do
+                  i.fa.fa-unlock.no-margin
+
+
+        td.text-center.noprint
+          = button_to offer_path(offer),
+            method: :delete,
+            class: 'btn btn-danger hint delete',
+            title: 'Remove',
+            data: { confirm: 'Are you sure you want to remove?' } do
+              i.fa.fa-trash.no-margin
+

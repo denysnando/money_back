@@ -1,7 +1,7 @@
 table.table
   tbody
-    - resources.each do |item|
+    - collections.each do |item|
       tr
         td = item.to_s
 
-        = render 'operations', resource: item, klass: @klass
+        = render 'operations', collection: item, klass: @klass

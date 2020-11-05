@@ -2,7 +2,7 @@
 
 class UsersController < CrudController
   before_action do
-    set_klass(User)
+    use_klass(User)
     clean_password_fields(:user)
     set_user_type
   end
@@ -15,19 +15,19 @@ class UsersController < CrudController
 
   def collection
     super
-    @resources = @resources.where(user_type: session[:user_type])
+    @collections = @collections.where(user_type: session[:user_type])
   end
 
   private
 
   def clean_password_fields(_model)
-    if params[:user] && params[:user][:password].blank?
-      params[:user].delete(:password)
-      params[:user].delete(:password_confirmation)
-    end
+    return unless params[:user] && params[:user][:password].blank?
+
+    params[:user].delete(:password)
+    params[:user].delete(:password_confirmation)
   end
 
-  def resource_params
+  def collection_params
     params.require(:user).permit(:email, :name, :password, :password_confirmation,
                                  :user_type)
   end

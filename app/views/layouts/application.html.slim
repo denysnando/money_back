@@ -35,7 +35,7 @@ html
                 span.hidden-xs = current_user.email
                 b.caret
               ul.dropdown-menu.animated.fadeInLeft
-                li = link_to 'Editar conta', '#'
+                li = link_to 'Editar conta', edit_user_path(current_user)
                 li = link_to 'Sair', destroy_user_session_path, method: :delete
 
       #sidebar.sidebar.noprint
@@ -65,43 +65,7 @@ html
                   span =  'Cadastros'
                 ul.sub-menu
                   li
-                    = link_to 'Cadastro 01', '#'
-                  li
-                    = link_to 'Cadastro 02', '#'
-                  li
-                    = link_to 'Cadastro 03', '#'
-                  li
-                    = link_to 'Cadastro 04', '#'
-                  li
-                    = link_to 'Cadastro 05', '#'
-
-            - unless current_user.admin?
-              li.has-sub class="#{navigation_css('Cadastros')}"
-                a href="javascript:;"
-                  i.fa.fa-file-text-o
-                  span =  'Cadastros'
-                ul.sub-menu
-                  li
-                    = link_to 'Cadastro 01', '#'
-                  li
-                    = link_to 'Cadastro 02', '#'
-
-            li.has-sub class="#{navigation_css('Relatórios')}"
-              a href="javascript:;"
-                i.fa.fa-print
-                span =  'Relatórios'
-              ul.sub-menu
-                  li
-                    = link_to 'Relatório 01', '#'
-                  li
-                    = link_to 'Relatório 02', '#'
-                  li
-                    = link_to 'Relatório 03', '#'
-
-            li class="#{navigation_css('export_reports')}"
-              = link_to '#' do
-                i.fa.fa-file-excel-o
-                span = 'Exportar Relatórios'
+                    = link_to 'Ofertas', offers_path
 
       .sidebar-bg
       /! end #sidebar

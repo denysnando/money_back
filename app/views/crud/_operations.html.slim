@@ -1,11 +1,11 @@
 td.text-center.noprint
-  = link_to send("edit_#{klass.model_name.param_key}_path", resource),
+  = link_to send("edit_#{klass.model_name.param_key}_path", collection),
     class: 'btn btn-success hint',
     title: 'Alterar' do
       i.fa.fa-pencil.no-margin
 
 td.text-center.noprint
-  = button_to send("#{klass.model_name.param_key}_path", resource),
+  = button_to send("#{klass.model_name.param_key}_path", collection),
     method: :delete,
     class: 'btn btn-danger hint delete',
     title: 'Remover',

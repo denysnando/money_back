@@ -1,0 +1,27 @@
+= simple_form_for @collection do |f|
+  .row
+    .col-md-4
+      = f.input :advertiser_name
+      = f.input :url
+      = f.input :description
+  .row
+    .col-md-4
+      = f.input :starts_at, as: :string,
+                input_html: { class: 'date',
+                              value: f.object.starts_at ? l(f.object.starts_at) : '' }
+  .row
+    .col-md-4
+      = f.input :ends_at, as: :string,
+                input_html: { class: 'date',
+                              value: f.object.ends_at ? l(f.object.ends_at) : '' }
+  - unless f.object.new_record?
+    .row
+      .col-md-4
+        = f.input :enabled
+
+  .row
+    .col-md-4
+      = f.input :premium
+
+  = render 'form_buttons', f: f
+

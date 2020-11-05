@@ -5,7 +5,7 @@
     h4.panel-title Gerenciamento
 
   .panel-body
-    = render 'list', resources: @resources
-    
+    = render 'list', collections: @collections
+
   p
-    = will_paginate @resources, renderer: BootstrapPagination::Rails
+    = will_paginate @collections, renderer: BootstrapPagination::Rails
