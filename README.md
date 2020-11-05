@@ -31,7 +31,7 @@ After you get all the [prerequisites](#prerequisites), simply execute the follow
 ## Running the project
 
 1. `$ rake start` - Opens the server
-2. Open [http://localhost:3001](http://localhost:3001)
+2. Open [http://localhost:3000](http://localhost:3000)
 
 #### Running specs and checking coverage
 To run the tests it is necessary to have the [prerequisites](#prerequisites) and have also completed the [installation](#installation) of dependencies.

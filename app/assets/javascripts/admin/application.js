@@ -12,40 +12,41 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
-//= require cocoon
 //= require_tree .
+//= require bootstrap-sprockets
 
 $(document).ready(function () {
   setFormMasks();
-  $('#wizard').bwizard({
-    nextBtnText: 'Próximo',
-    backBtnText: 'Anterior'
+  $("#wizard").bwizard({
+    nextBtnText: "Próximo",
+    backBtnText: "Anterior",
   });
   App.init();
 
-  var input = $('input.currency');
-  input.css('text-align', 'right');
+  var input = $("input.currency");
+  input.css("text-align", "right");
   input.maskMoney({
-    prefix: '',
+    prefix: "",
     thousands: ".",
-    decimal: ","
+    decimal: ",",
   });
 
-  $('.simple_form').on('submit', function (e) {
-    $(this).find('input.currency').each(function () {
-      $(this).val($(this).maskMoney('unmasked')[0]);
-    });
+  $(".simple_form").on("submit", function (e) {
+    $(this)
+      .find("input.currency")
+      .each(function () {
+        $(this).val($(this).maskMoney("unmasked")[0]);
+      });
   });
 
   $("input[type='checkbox'].boolean").bootstrapSwitch({
-    onText: 'Sim',
-    offText: 'Não'
+    onText: "Sim",
+    offText: "Não",
   });
 });
 
 function setFormMasks() {
-  $('.hint').tooltip();
+  $(".hint").tooltip();
 
   $("input.cpf").mask("999.999.999-99");
   $("input.cep-input").mask("99.999-999");
@@ -55,7 +56,7 @@ function setFormMasks() {
   $("input.cnpj").mask("99.999.999/9999-99");
 }
 
-$(document).on('cocoon:after-insert', function (e, insertedItem) {
+$(document).on("cocoon:after-insert", function (e, insertedItem) {
   setFormMasks();
   loadCepApi();
 });
