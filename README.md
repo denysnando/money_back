@@ -1,24 +1,44 @@
-# README
+## README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi, This project is a [Rails](http://rubyonrails.org/) application for the [money_back](#) company.
 
-Things you may want to cover:
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+Have the following features with their respective versions installed on the machine:
 
-* Configuration
+* Ruby `2.7.1` - You can use [RVM](http://rvm.io)
+* PostgreSQL 12
+  * OSX - `$ brew install postgresql` or install [Postgress.app](http://postgresapp.com/)
+  * Linux - `$ sudo apt-get install postgresql`
+  * Windows - [PostgreSQL for Windows](http://www.postgresql.org/download/windows/)
+* Bundler `2.1.4`
 
-* Database creation
+## Setup the project
 
-* Database initialization
+After you get all the [prerequisites](#prerequisites), simply execute the following commands in sequence:
 
-* How to run the test suite
+```bash
+1. Install the dependencies above
+2. $ git clone  # Clone the project
+3. $ cd user_upload # Go into the project folder
+4. $ gem install bundler # Bundler install
+5. $ bin/bundle install # Install the gem dependencies
+7. $ bin/rake db:create ; bin/rake db:migrate ; bin/rake db:seed # Reset and seed the database
+8. $ bin/rspec # Run the specs to see if everything is working fine
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running the project
 
-* Deployment instructions
+1. `$ rake start` - Opens the server
+2. Open [http://localhost:3001](http://localhost:3001)
 
-* ...
+#### Running specs and checking coverage
+To run the tests it is necessary to have the [prerequisites](#prerequisites) and have also completed the [installation](#installation) of dependencies.
+
+`$ bin/bundle rspec` to run the specs.
+
+`$ coverage=on bin/bundle rspec` to generate the coverage report then open the file `coverage/index.html` on your browser.
+
+
+## Thanks for the opportunity :+1:
