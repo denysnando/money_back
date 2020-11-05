@@ -1,1 +1,0 @@
-{"timestamp":1604585155,"command_name":"RSpec","files":[{"filename":"/Users/denys-mac/projects/money_back/app/models/offer.rb","covered_percent":87.5,"coverage":{"lines":[null,null,1,null,1,1,1,1,1,null,1,0,null,null]},"covered_strength":0.875,"covered_lines":7,"lines_of_code":8}],"metrics":{"covered_percent":87.5,"covered_strength":0.875,"covered_lines":7,"total_lines":8}}
