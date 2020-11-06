@@ -10,11 +10,11 @@ RSpec.describe Offer, type: :model do
     it { is_expected.to validate_presence_of :starts_at }
   end
 
-  context 'validates uniqueness' do
+  context 'when validates uniqueness' do
     it { is_expected.to validate_uniqueness_of(:advertiser_name) }
   end
 
-  context 'validates length' do
+  context 'when validates length' do
     it { is_expected.to validate_length_of(:description).is_at_most(500) }
   end
 end

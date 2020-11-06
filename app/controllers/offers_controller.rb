@@ -11,7 +11,6 @@ class OffersController < CrudController
 
   def change_status
     @offer = Offer.find(params[:id])
-
     if @offer.enabled && !@offer.cannot_update_status?
       @offer.update(enabled: false)
       flash[:notice] = 'Update successfully'

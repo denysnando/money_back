@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of :email }
   end
 
-  context 'validates uniqueness' do
-    it { should validate_uniqueness_of(:email).ignoring_case_sensitivity }
+  context 'when validates uniqueness' do
+    it { is_expected.to validate_uniqueness_of(:email).ignoring_case_sensitivity }
   end
 end

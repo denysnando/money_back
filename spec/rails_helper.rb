@@ -37,7 +37,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  # config.include Request, type: :request
-  config.infer_spec_type_from_file_location!
-  config.raise_errors_for_deprecations!
+  config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end

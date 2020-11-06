@@ -18,10 +18,6 @@ class CrudController < ApplicationController
     @collection = @klass.find(params[:id])
   end
 
-  def show
-    @collection = @klass.find(params[:id])
-  end
-
   def create
     @collection = @klass.new(collection_params)
     if @collection.save
@@ -67,21 +63,9 @@ class CrudController < ApplicationController
     @klass = klass
   end
 
-  def search_attrs(attrs)
-    @search_attrs = attrs
-  end
-
-  def readonly
-    @readonly = true
-  end
-
   private
 
   def collection
     @collections ||= @klass.paginate(page: params[:page], per_page: 30).order('created_at desc')
-  end
-
-  def save_collection_in_session
-    session[@collection.class.to_s.downcase] = @collection.id if @collection
   end
 end
