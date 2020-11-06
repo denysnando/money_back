@@ -1,6 +1,8 @@
 ## README
 
-Hi, This project is a [Rails](http://rubyonrails.org/) application for the [money_back](#) company.
+Hi, This project is a [Rails](http://rubyonrails.org/) application for the [money_back](https://money-back.herokuapp.com/).
+
+
 
 
 ## Prerequisites
