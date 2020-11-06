@@ -1,9 +1,9 @@
 ## README
 
-Hi, This project is a [Rails](http://rubyonrails.org/) application for the [money_back](https://money-back.herokuapp.com/).
-
-
-
+Hi, This project is a [Rails](http://rubyonrails.org/) application for the [money_back](https://money-back.herokuapp.com/) project.
+You can access the admin area [HERE](https://money-back.herokuapp.com/admin), using that credentials
+* login: - admin@admin.com
+* password: - admin123
 
 ## Prerequisites
 
@@ -41,6 +41,5 @@ To run the tests it is necessary to have the [prerequisites](#prerequisites) and
 `$ bin/bundle rspec` to run the specs.
 
 `$ coverage=on bin/bundle rspec` to generate the coverage report then open the file `coverage/index.html` on your browser.
-
 
 ## Thanks for the opportunity :+1:
